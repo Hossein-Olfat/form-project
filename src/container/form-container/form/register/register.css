@@ -1,0 +1,8 @@
+.register{
+    width: 100%;
+    padding: 14px;
+    background-color: #65c542;
+    color: white;
+    font-size: 1.05rem;
+    cursor: pointer;
+}

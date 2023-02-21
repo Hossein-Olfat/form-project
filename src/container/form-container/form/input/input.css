@@ -1,0 +1,23 @@
+.Input-container{
+    width: 100%;
+    margin-bottom: 28px;
+}
+
+.Input{
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    padding: 14px;
+    caret-color:rgb(150, 150, 150);
+    font-size: 1.02rem;
+}
+.Input::placeholder{
+    color: rgb(150, 150, 150);
+}
+.error{
+    display: none;
+}
+.error-text{
+    margin-top: 5px;
+    color: red;
+    font-size: .8rem;
+}
