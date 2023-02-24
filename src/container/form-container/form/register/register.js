@@ -1,8 +1,8 @@
 import './register.css';
-function Register(){
+function Register({registering}){
 
     return (
-        <button className='register' type='submit'>Register</button>
+        <button onClick={()=>{registering()}} className='register' type='submit'>Register</button>
     )
 }
 

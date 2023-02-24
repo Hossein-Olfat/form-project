@@ -13,9 +13,7 @@
 .Input::placeholder{
     color: rgb(150, 150, 150);
 }
-.error{
-    display: none;
-}
+
 .error-text{
     margin-top: 5px;
     color: red;
