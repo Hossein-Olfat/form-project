@@ -17,14 +17,14 @@ function Form(){
     function update(event,Inputname){
         event.preventDefault();
        let change_format = Inputname.split('').filter((value)=>{return value!==' '}).join('').toLowerCase();
-       let _event =event.target.value.trim();
-       let remove_space = _event.split('').filter((v,index)=>{return v!==' ' || _event[index+1]!==' '}).join('');
+    let _event =event.target.value.trimStart();
+    console.log(_event.length);
        
     let result = ourform.map((value)=>{
         if(value.hasOwnProperty(change_format)){
             
            if(value.show_error[0]){
-              let sample= {[change_format]:remove_space,show_error:[false,1]};
+              let sample= {[change_format]:_event,show_error:[false,1]};
 
              if(!sample[[change_format]]){
                 sample.show_error[0]=true;
@@ -33,18 +33,18 @@ function Form(){
                 return sample;
              }
              
-           }else if(remove_space.length===0 && value.show_error[1]===1){
+           }else if(_event.length===0 && value.show_error[1]===1){
             
-            return {[change_format]:remove_space,show_error:[true,1]}
+            return {[change_format]:_event,show_error:[true,1]}
 
            }
            else if(!value.show_error[0] && value.show_error[1]===1){
             
-            return {[change_format]:remove_space,show_error:[false,1]};
+            return {[change_format]:_event,show_error:[false,1]};
             
             }else if(!value.show_error[0] && value.show_error[1]===0){
                 
-                return {[change_format]:remove_space,show_error:[false,0]}
+                return {[change_format]:_event,show_error:[false,0]}
             }
            
         }
@@ -52,7 +52,7 @@ function Form(){
             return value;
         }
     });
-    console.log(remove_space);
+    console.log(_event);
     setform(result);
 }
        

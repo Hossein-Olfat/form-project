@@ -6,7 +6,7 @@ function Input({type,inputname,changeinput,show,_value}){
     return(
         <div className='Input-container'>
            
-            <input onkeypress="return event.which != 32" value={_value} onChange={(e)=>{changeinput(e,inputname)}} className='Input' placeholder={inputname} type={type}/>
+            <input value={_value} onChange={(e)=>{changeinput(e,inputname)}} className='Input' placeholder={inputname} type={type}/>
             
                 {
                     show && 
